@@ -1,0 +1,885 @@
+# Upgrade v2.0 by DucTrader. Forked with JavaScript 
+#
+# All placeholders are custom-coded, placeholders can be found in /plugins/PlaceholderAPI/javascripts
+#
+# A list of all usable placeholders(except example.js - which is a test file, can be found in
+# /plugins/PlaceholderAPI/javascript-placeholders.yml)
+#
+# This version of 'Upgrade' contains two files : upgrade.yml and store.yml
+#
+# And skulls id are stored in ids.yml
+#
+# Note: This GUI was created and bug-tested using DeluxeMenus v1.13.3
+#
+# PlaceholderAPI version: API-ver 2.10.9
+#
+# JavaScript version: {version}
+
+menu_title: '&eUpgrade &8&l| &fLò Rèn'
+open_command: doiblock
+update_interval: 1
+size: 45
+items:
+  'glass-col1':
+    material: STAINED_GLASS_PANE
+    display_name: '&7'
+    data: 5
+    hide_attributes: true
+    slots:
+      - 1
+      - 9
+      - 10
+      - 18
+      - 27
+      - 28
+      - 37
+      - 7
+      - 16
+      - 17
+      - 26
+      - 35
+      - 34
+      - 43
+  'glass-col2':
+    material: STAINED_GLASS_PANE
+    display_name: '&7'
+    data: 0
+    hide_attributes: true
+    slots:
+      - 29
+      - 38
+      - 39
+      - 40
+      - 41
+      - 42
+      - 33
+      - 2
+      - 11
+      - 3
+      - 4
+      - 5
+      - 6
+      - 15
+      - 19
+      - 25
+  'glass-col3':
+    material: STAINED_GLASS_PANE
+    display_name: '&7'
+    data: 3
+    hide_attributes: true
+    slots:
+      - 0
+      - 8
+      - 44
+      - 13
+      - 21
+      - 23
+      - 31
+  # Slots for items : 12, 14, 20, 22, 24, 30
+  # Items need to be made : 14
+  # Use skulls plz
+  'refresh':
+    material: basehead-eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTg4N2NjMzg4YzhkY2ZjZjFiYThhYTVjM2MxMDJkY2U5Y2Y3YjFiNjNlNzg2YjM0ZDRmMWMzNzk2ZDNlOWQ2MSJ9fX0=
+    display_name: '&eUpgrade &8&l| &dTải lại &e(Reload)'
+    hide_attributes: true
+    priority: 0
+    slot: 36
+    lore:
+      - '&7'
+      - '&8&l[&c+&8&l] &bHướng dẫn &f»'
+      - '&f &f &f &fTrong trường hợp &eMenu Upgrade &fkhông'
+      - '&f &f &f &fphản hồi, hãy sử dụng nút này để tải'
+      - '&f &f &f &flại nhằm cập nhật các số hiển thị'
+      - '&f &f &f &fcũng như để hệ thống kiểm tra lại'
+      - '&f &f &f &ftúi đồ của bạn, để cập nhật các icon'
+      - '&f'
+      - '&f &f &f &cLưu ý: &fTrong trường hợp bạn có đủ 64'
+      - '&f &f &f &fkhối mà bạn cần nâng cấp, mà hệ thống'
+      - '&f &f &f &fvẫn không cho nâng cấp, hãy thử bấm'
+      - '&f &f &f &fnút tải lại, vì khi nhặt block hệ thống'
+      - '&f &f &f &fsẽ không thể trực tiếp kiểm tra và tự'
+      - '&f &f &f &ftải lại menu đâu nha!'
+      - '&f'
+      - '&8&l[&c+&8&l] &eGhi chú &f»'
+      - '&f &f &f &fSau khi trao đổi, máy chủ sẽ mất khoảng 1s'
+      - '&f &f &f &fđể có thể cập nhật lại số block trong túi,'
+      - '&f &f &f &fnên để hạn chế lag/lỗi gây ra bởi hệ thống,'
+      - '&f &f &f &fhãy hạn chế việc spam tính năng :)'
+      - '&f'
+      - '&f &f &f &fThân gửi: &bDucTrader'
+      - '&f'
+      - '&eChuột Trái &f- Tải lại menu'
+      - '&eChuột Phải &f- Đóng menu'
+    left_click_commands:
+      - '[refresh]'
+      - '[message] &eUpgrade &8&l| &fĐã tải lại menu thành công!'
+    right_click_commands:
+      - '[message] &eUpgrade &8&l| &fĐã đóng menu, hãy thử mở lại bằng lệnh &e/doiblock'
+      - '[close]'
+
+  # Update 6/11/2020 - Skeleton for expression 1 done
+  # Excute commands as warnings/notes for players
+  # Expression 2 will contain commands, estimate size (100-200 lines per item)
+  # Estimated size of file: ~750-1000 lines
+  # View requirements make sure these items only appear when the player doesn't have enough blocks.
+  'coal1':
+    material: basehead-eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWU4ZTY3MGE3OWI2MTYzMzRiYzFmYjkxMzkxMzJmYjM1YzU3ZGRhNjk3NWFmOWNlNDgzMzNlOTRhYTZjOTU3MyJ9fX0=
+    display_name: '&eUpgrade &8&l| &8Than &eNâng Cấp'
+    hide_attributes: true
+    update: true
+    lore:
+      - '&7'
+      - '&8&l[&e+&8&l] &aGiới thiệu &f»'
+      - '&f &f &f &fChuyển thể những khối than đặc'
+      - '&f &f &f &fmàu đen thành những viên đá'
+      - '&f &f &f &fmang theo một nguồn năng lượng'
+      - '&f &f &f &fdồi dào, đó chính là những viên'
+      - '&f &f &f &8Than &eNâng Cấp&f, có sức mạnh'
+      - '&f &f &f &ftạo nên những món đồ đặc biệt'
+      - '&f'
+      - '&8&l[&e+&8&l] &eChuyển đổi &f»'
+      - '&f &f &f &cLưu ý: &fTrong túi bạn hiện'
+      - '&f &f &f &fkhông có đủ khối than để'
+      - '&f &f &f &fthực hiện nâng cấp'
+      - '&f &f &f &f'
+      - '&f &f &f &fĐang có: &a%javascript_count-amount_coal% &8Khối Than'
+      - '&f &f &f &fTối thiểu: &a64 &8Khối Than'
+      - '&f &f &f &f'
+      - '&f &f &f &fBạn phải có ít nhất &a%math_64-{javascript_count-amount_coal}[precision:0]% &8Khối Than'
+      - '&f &f &f &fnữa trong túi để có thể sử dụng'
+      - '&f &f &f &ftính năng nâng cấp &8Khối Than&f'
+      - '&f'
+      - '&eChuột Phải &f- Đóng menu'
+    view_requirement:
+      requirements:
+        v1:
+          type: javascript
+          expression: '%javascript_count-amount_coal% < 64'
+    priority: 1
+    slot: 12
+    left_click_commands:
+      - '[message] &eUpgrade &8&l| &fBạn cần có tối thiểu &a64 &8Khối Than &fđể thực hiện chuyển đổi!'
+      - '[close]'
+    right_click_commands:
+      - '[close]'
+  'lapis1':
+    material: basehead-eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTFhYjY2NjcxMzgyZDdhNDRlNDlmMjZmNjM2M2VkNDY1NGE5M2QzZjk5MDRkYjg2NDI1YzI5YWQ5NmY2NjEyIn19fQ==
+    display_name: '&eUpgrade &8&l| &9Lưu Ly &eNâng Cấp'
+    hide_attributes: true
+    update: true
+    lore:
+      - '&7'
+      - '&8&l[&e+&8&l] &aGiới thiệu &f»'
+      - '&f &f &f &fDung luyện nên từ những viên ngọc'
+      - '&f &f &f &flưu ly mang theo khả năng phù phép'
+      - '&f &f &f &fnhững vật phẩm tầm thường thành'
+      - '&f &f &f &fmột thứ có sức mạnh vô song, tạo'
+      - '&f &f &f &9Lưu Ly &eNâng Cấp&f, những viên'
+      - '&f &f &f &fngọc có giá trị ma thuật cao'
+      - '&f'
+      - '&8&l[&e+&8&l] &eChuyển đổi &f»'
+      - '&f &f &f &cLưu ý: &fTrong túi bạn hiện'
+      - '&f &f &f &fcó đủ khối lưu ly để thực'
+      - '&f &f &f &fhiện nâng cấp!'
+      - '&f'
+      - '&f &f &f &fĐang có: &a%javascript_count-amount_lapis% &9Khối Lưu Ly'
+      - '&f &f &f &fTối thiểu: &a64 &9Khối Lưu Ly'
+      - '&f' 
+      - '&f &f &f &fBạn phải có ít nhất &a%math_64-{javascript_count-amount_lapis}[precision:0]% &9Khối Lưu Ly'
+      - '&f &f &f &fnữa trong túi để có thể sử dụng'
+      - '&f &f &f &ftính năng nâng cấp &9Khối Lưu Ly&f'
+      - '&f'
+      - '&eChuột Phải &f- Đóng menu'
+    view_requirement:
+      requirements:
+        v2:
+          type: javascript
+          expression: '%javascript_count-amount_lapis% < 64'
+    priority: 1
+    slot: 14
+    left_click_commands:
+      - '[message] &eUpgrade &8&l| &fBạn cần có tối thiểu &a64 &9Khối Lưu Ly &fđể thực hiện chuyển đổi!'
+      - '[close]'
+    right_click_commands:
+      - '[close]'
+  'redstone1':
+    material: basehead-eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjEyMzVjZjc1ZGY2YjViOWY0Zjc0Y2FkZGE1ZWMyMTVmNDgyYWFhMzI5YzI2MTJiNGEyYThlYTNlMDFiZWVkIn19fQ==
+    display_name: '&eUpgrade &8&l| &4Đá Đỏ &eNâng Cấp'
+    hide_attributes: true
+    update: true
+    lore:
+      - '&7'
+      - '&8&l[&e+&8&l] &aGiới thiệu &f»'
+      - '&f &f &f &4Đá Đỏ&f, một nguyên liệu có khả năng'
+      - '&f &f &f &ftạo nên những cỗ máy đa tính năng,'
+      - '&f &f &f &ftiện lợi hóa cuộc sống của người chơi'
+      - '&f &f &f &fvà cũng là một nguồn năng lượng điện'
+      - '&f &f &f &fkhổng lồ. &4Đá Đỏ &eNâng Cấp&f, bản'
+      - '&f &f &f &fnâng cấp của đá đỏ là một phần không thể'
+      - '&f &f &f &fthiếu cho sức mạnh của những vũ khí'
+      - '&f &f &f &fhoặc dụng cụ có tính linh hoạt cao'
+      - '&f'
+      - '&8&l[&e+&8&l] &eChuyển đổi &f»'
+      - '&f &f &f &cLưu ý: &fTrong túi bạn hiện'
+      - '&f &f &f &fcó đủ khối đá đỏ để thực'
+      - '&f &f &f &fhiện nâng cấp!'
+      - '&f'
+      - '&f &f &f &fĐang có: &a%javascript_count-amount_redstone% &4Khối Đá Đỏ'
+      - '&f &f &f &fTối thiểu: &a64 &4Khối Đá Đỏ'
+      - '&f'
+      - '&f &f &f &fBạn phải có ít nhất &a%math_64-{javascript_count-amount_redstone}[precision:0]% &4Khối Đá Đỏ'
+      - '&f &f &f &fnữa trong túi đồ để có thể sử dụng'
+      - '&f &f &f &ftính năng nâng cấp &4Khối Đá Đỏ&f!'
+      - '&f'
+      - '&eChuột Phải &f- Đóng menu'
+    view_requirement:
+      requirements:
+        v3:
+          type: javascript
+          expression: '%javascript_count-amount_redstone% < 64'
+    priority: 1
+    slot: 20
+    left_click_commands:
+      - '[message] &eUpgrade &8&l| &fBạn cần có tối thiểu &a64 &4Khối Đá Đỏ &fđể thực hiện chuyển đổi!'
+      - '[close]'
+    right_click_commands:
+      - '[close]'
+  'iron1':
+    material: basehead-eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDBmOGRmYTVlZmM3NTYzMGNlMGRmNDBhNDliOGY1OWJjMjIyMTRkZTk3ZTNmYjQ0YjNjNTZlOGE5YzhhNTZiNiJ9fX0=
+    display_name: '&eUpgrade &8&l| &fSắt &eNâng Cấp'
+    hide_attributes: true
+    update: true
+    lore:
+      - '&7'
+      - '&8&l[&e+&8&l] &aGiới thiệu &f»'
+      - '&f &f &f &fSắt, một trong những kim loại quen'
+      - '&f &f &f &fthuộc nhất đối với đời sống của chúng'
+      - '&f &f &f &fta, cũng như là kim loại quan trọng'
+      - '&f &f &f &fnhất trong trò chơi. &fSắt &eNâng Cấp'
+      - '&f &f &f &fđược luyện nên từ trong những lò nén'
+      - '&f &f &f &ftinh thể ở nhiệt độ cao khủng khiếp,'
+      - '&f &f &f &fhình thành nên những thỏi sắt có độ'
+      - '&f &f &f &fbền tương đối cao, khó vỡ nát.'
+      - '&f'
+      - '&8&l[&e+&8&l] &eChuyển đổi &f»'
+      - '&f &f &f &cLưu ý: &fTrong túi bạn hiện'
+      - '&f &f &f &fcó đủ khối sắt để thực'
+      - '&f &f &f &fhiện nâng cấp!'
+      - '&f'
+      - '&f &f &f &fĐang có: &a%javascript_count-amount_iron% &fKhối Sắt'
+      - '&f &f &f &fTối thiểu: &a64 &fKhối Sắt'
+      - '&f'
+      - '&f &f &f &fBạn phải có ít nhất &a%math_64-{javascript_count-amount_iron}[precision:0]% &fKhối Sắt'
+      - '&f &f &f &fnữa trong túi đồ để có thể sử dụng'
+      - '&f &f &f &ftính năng nâng cấp Khối Sắt!'
+      - '&f'
+      - '&eChuột Phải &f- Đóng menu'
+    view_requirement:
+      requirements:
+        v4:
+          type: javascript
+          expression: '%javascript_count-amount_iron% < 64'
+    priority: 1
+    slot: 22
+    left_click_commands:
+      - '[message] &eUpgrade &8&l| &fBạn cần có tối thiểu &a64 &fKhối Sắt để thực hiện chuyển đổi!'
+      - '[close]'
+    right_click_commands:
+      - '[close]'
+  'gold1':
+    material: basehead-eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTUxNTk5ZjY2ZTgzZGE1NTVjZjliOGI3ZTVhMzc5ZDBkZWFiMjFjMmVlZTkwOWQxODM3MzIzZGIwODkzYmYzOCJ9fX0=
+    display_name: '&eUpgrade &8&l| &6Vàng &eNâng Cấp'
+    hide_attributes: true
+    update: true
+    lore:
+      - '&7'
+      - '&8&l[&e+&8&l] &aGiới thiệu &f»'
+      - '&f &f &f &6Vàng&f, một trong những kim loại quý'
+      - '&f &f &f &fgiá của thế giới, là một khoáng sản'
+      - '&f &f &f &fđắt giá, và &6Vàng &eNâng Cấp &flà'
+      - '&f &f &f &flà sự dung luyện của những khối vàng'
+      - '&f &f &f &fcó giá trị cao, tạo nên tính chất'
+      - '&f &f &f &fkhúc xạ ánh sáng cũng như sát thương'
+      - '&f &f &f &flửa của nó, hoặc làm tăng tốc độ hoạt'
+      - '&f &f &f &fđộng của các dụng cụ thường ngày'
+      - '&f'
+      - '&8&l[&e+&8&l] &eChuyển đổi &f»'
+      - '&f &f &f &cLưu ý: &fTrong túi bạn hiện'
+      - '&f &f &f &fcó đủ khối vàng để thực'
+      - '&f &f &f &fhiện nâng cấp!'
+      - '&f'
+      - '&f &f &f &fĐang có: &a%javascript_count-amount_gold% &6Khối Vàng'
+      - '&f &f &f &fTối thiểu: &a64 &6Khối Vàng'
+      - '&f'
+      - '&f &f &f &fBạn phải có ít nhất &a%math_64-{javascript_count-amount_gold}[precision:0]% &6Khối Vàng'
+      - '&f &f &f &fnữa trong túi đồ để có thể sử dụng'
+      - '&f &f &f &ftính năng nâng cấp &6Khối Vàng&f!'
+      - '&f'
+      - '&eChuột Phải &f- Đóng menu'
+    view_requirement:
+      requirements:
+        v5:
+          type: javascript
+          expression: '%javascript_count-amount_gold% < 64'
+    priority: 1
+    slot: 24
+    left_click_commands:
+      - '[message] &eUpgrade &8&l| &fBạn cần có tối thiểu &a64 &6Khối Vàng &fđể thực hiện chuyển đổi!'
+      - '[close]'
+    right_click_commands:
+      - '[close]'
+  'diamond1':
+    material: basehead-eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWUwNTc5OTZjYmE0NzMyOGRmNzJmYmEzZWEyYjlhYTM1YzhhODIyN2YxY2VjODljMTg4NGRjYWRhYTgyNGQ4NSJ9fX0=
+    display_name: '&eUpgrade &8&l| &bKim Cương &eNâng Cấp'
+    hide_attributes: true
+    update: true
+    lore:
+      - '&7'
+      - '&8&l[&e+&8&l] &aGiới thiệu »'
+      - '&f &f &f &fMột trong hai nguyên liệu quý hiếm nhất'
+      - '&f &f &f &ftrong công cuộc khai thác khoáng sản'
+      - '&f &f &f &ftrên đảo bay chính là &bKim Cương&f, và'
+      - '&f &f &f &bKim Cương &eNâng Cấp&f, sự kết tinh của'
+      - '&f &f &f &fnhững tinh thể &bKim Cương&f, tạo nên'
+      - '&f &f &f &fkhả năng chịu bền cao và đồng thời là'
+      - '&f &f &f &fmạch ma thuật chính của đa số vật phẩm'
+      - '&f &f &f &fcó độ hiếm cao trong máy chủ'
+      - '&f'
+      - '&8&l[&e+&8&l] &aChuyển đổi &f»'
+      - '&f &f &f &cLưu ý: &fTrong túi bạn hiện'
+      - '&f &f &f &fcó đủ khối kim cương để thực'
+      - '&f &f &f &fhiện nâng cấp!'
+      - '&f'
+      - '&f &f &f &fĐang có: &a%javascript_count-amount_diamond% &bKhối Kim Cương'
+      - '&f &f &f &fTối thiểu: &a64 &bKhối Kim Cương'
+      - '&f'
+      - '&f &f &f &fBạn phải có ít nhất &a%math_64-{javascript_count-amount_diamond}[precision:0]% &bKhối Kim Cương'
+      - '&f &f &f &fnữa trong túi đồ để có thể sử dụng'
+      - '&f &f &f &ftính năng nâng cấp &bKhối Kim Cương&f!'
+      - '&f'
+      - '&eChuột Phải &f- Đóng menu'
+    view_requirement:
+      requirements:
+        v6:
+          type: javascript
+          expression: '%javascript_count-amount_diamond% < 64'
+    priority: 1
+    slot: 30
+    left_click_commands:
+      - '[message] &eUpgrade &8&l| &fBạn cần có tối thiểu &a64 &bKhối Kim Cương &fđể thực hiện chuyển đổi!'
+      - '[close]'
+    right_click_commands:
+      - '[close]'
+  'emerald1':
+    material: basehead-eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOGU3MzJhZjdkZDljMTNmNmIxZWI4YjcxYmYzNzNiYmUwMmI4YWViM2ZjZjY5YjNlYjQwZDZkMjliNGZmODQyMCJ9fX0=
+    display_name: '&eUpgrade &8&l| &aLục Bảo &eNâng Cấp'
+    hide_attributes: true
+    update: true
+    lore:
+      - '&7'
+      - '&8&l[&e+&8&l] &aGiới thiệu &f»'
+      - '&f &f &f &fSâu trong những ngọn núi cao vút của'
+      - '&f &f &f &fthế giới, là những viên &aNgọc Lục Bảo'
+      - '&f &f &f &fđược dùng cho việc trao đổi với dân'
+      - '&f &f &f &flàng, thế nhưng độ hiếm của chúng cũng'
+      - '&f &f &f &fkhông thua kém gì những viên kim cương.'
+      - '&f &f &f &fVới những viên &aLục Bảo &fnâng cấp,'
+      - '&f &f &f &fthể sở hữu những vật phẩm có tính phù'
+      - '&f &f &f &fphép mạnh và những khả năng siêu nhiên'
+      - '&f'
+      - '&8&l[&e+&8&l] &eChuyển đổi &f»'
+      - '&f &f &f &cLưu ý: &fTrong túi bạn hiện'
+      - '&f &f &f &fcó đủ khối ngọc lục bảo để'
+      - '&f &f &f &fthực hiện nâng cấp!'
+      - '&f'
+      - '&f &f &f &fĐang có: &a%javascript_count-amount_emerald% &aKhối Ngọc Lục Bảo'
+      - '&f &f &f &fTối thiểu: &a64 &aKhối Ngọc Lục Bảo'
+      - '&f'
+      - '&f &f &f &fBạn cần phải có ít nhất &a%math_64-{javascript_count-amount_emerald}[precision:0]% &aKhối Ngọc Lục Bảo'
+      - '&f &f &f &fnữa trong túi đồ để có thể sử dụng'
+      - '&f &f &f &ftính năng nâng cấp &aKhối Ngọc Lục Bảo&f!'
+      - '&f'
+      - '&eChuột Phải &f- Đóng menu'
+    view_requirement:
+      requirements:
+        v7:
+          type: javascript
+          expression: '%javascript_count-amount_emerald% < 64'
+    priority: 1
+    slot: 32
+    left_click_commands:
+      - '[message] &eUpgrade &8&l| &fBạn cần có tối thiểu &a64 Khối Ngọc Lục Bảo &fđể thực hiện chuyển đổi!'
+      - '[close]'
+    right_click_commands:
+      - '[close]'
+  # Expression 2 - Generated when player has 64 blocks or more in their inventory
+  # Use dynamic-amount to display the amount of stacks that is tradable
+  # Skeleton build as of 13:15 - 08/11/2020
+  'coal2':
+    material: basehead-eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWU4ZTY3MGE3OWI2MTYzMzRiYzFmYjkxMzkxMzJmYjM1YzU3ZGRhNjk3NWFmOWNlNDgzMzNlOTRhYTZjOTU3MyJ9fX0=
+    display_name: '&eUpgrade &8&l| &8Than &eNâng Cấp'
+    update: true
+    hide_attributes: true
+    dynamic_amount: '%javascript_count-stack_coal%' 
+    lore:
+      - '&7'
+      - '&8&l[&5+&8&l] &aGiới thiệu &f»'
+      - '&f &f &f &fChuyển thể những khối than đặc'
+      - '&f &f &f &fmàu đen thành những viên đá'
+      - '&f &f &f &fmang theo một nguồn năng lượng'
+      - '&f &f &f &fdồi dào, đó chính là những viên'
+      - '&f &f &f &8Than &eNâng Cấp&f, có sức mạnh'
+      - '&f &f &f &ftạo nên những món đồ đặc biệt'
+      - '&f'
+      - '&8&l[&5+&8&l] &eChuyển đổi &f»'
+      - '&f &f &f &aGhi chú: &fĐể tránh tình trạng'
+      - '&f &f &f &clag/lỗi &fgây ra bởi hệ thống,'
+      - '&f &f &f &fvui lòng hạn chế spam lệnh.'
+      - '&f'
+      - '&f &f &f &fGiá đổi: &a64 &8Khối Than &f➨ &a1 &8Than &eNâng Cấp'
+      - '&f &f &f &fTúi của bạn: &a%javascript_count-amount_coal% &8Khối Than'
+      - '&f'
+      - '&f &f &f &e» &fChế độ đổi'
+      - '&f &f &f &8&l[&b+&8&l] &eĐổi một lần &f»'
+      - '&f &f &f &f &f &f &f &fCó thể đổi: &a%javascript_count-stack_coal% &flần đổi'
+      - '&f &f &f &f &f &f &f &cLưu ý: &fNên dùng chế độ này nếu bạn có ít hơn'
+      - '&f &f &f &f &f &f &f &a256 &8Khối Than &a(4 stack) &ftrong túi, để'
+      - '&f &f &f &f &f &F &f &fnhằm hạn chế lag cho hệ thống.'
+      - '&f'
+      - '&f &f &f &8&l[&b+&8&l] &eĐổi tất cả &f»'
+      - '&f &f &f &f &f &f &f &fSau khi đổi: &a%javascript_count-amount_coal% &f⇨ &a%javascript_count-remain_coal% &8Khối Than'
+      - '&f &f &f &f &f &f &f &fNhận được: &a%javascript_count-stack_coal% &8Than &eNâng Cấp'
+      - '&f'
+      - '&eChuột Trái &f- Đổi một lần'
+      - '&eChuột Phải &f- Đổi tất cả'
+    priority: 2
+    slot: 12
+    left_click_requirement:
+      requirements:
+        has-block:
+          type: has item
+          material: "COAL_BLOCK"
+          amount: 64
+      deny_commands:
+        - '[message] &eUpgrade &8&l| &fBạn không có đủ &a64 &8Khối Than &fđể trao đổi với hệ thống!'
+        - '[refresh]'
+    left_click_commands:
+      - '[console] clear %player_name% coal_block 64'
+      - '[console] mi load custom coal1 %player_name% 1'
+      - '[message] &eUpgrade &8&l| &fĐã đổi thành công &a1 &8Than &eNâng Cấp&f, bạn còn &a%math_{javascript_count-amount_coal}-64[precision:0]% &8Khối Than'
+    right_click_requirement:
+      requirements:
+        is-necessary:
+          type: javascript
+          expression: "%javascript_count-amount_coal% >= 256"
+      deny_commands:
+        - '[message] &eUpgrade &8&l| &fSố khối trong túi của bạn khá ít, hãy sử dụng chế độ đổi lần lượt để hạn chế làm lag máy chủ :)'
+    right_click_commands:
+      - '[console] mi load custom coal1 %player_name% %javascript_count-stack_coal%'
+      - '[console] clear %player_name% coal_block %math_{javascript_count-stack_coal}*64[precision:0]%'
+      - '[message] &eUpgrade &8&l| &fNâng cấp khoáng sản hoàn tất! &fĐã chuyển đổi &a%math_{javascript_count-stack_coal}*64[precision:0]% &8Khối Than &fthành &a%javascript_count-stack_coal%
+       &8Than &eNâng Cấp&f, trong túi đồ của bạn hiện còn &a%javascript_count-remain_coal% &8Khối Than'
+      - '[refresh] <delay=10>'
+  'lapis2':
+    material: basehead-eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTFhYjY2NjcxMzgyZDdhNDRlNDlmMjZmNjM2M2VkNDY1NGE5M2QzZjk5MDRkYjg2NDI1YzI5YWQ5NmY2NjEyIn19fQ==
+    display_name: '&eUpgrade &8&l| &9Lưu Ly &eNâng Cấp'
+    hide_attributes: true
+    update: true
+    dynamic_amount: '%javascript_count-stack_lapis%'
+    lore:
+      - '&7'
+      - '&8&l[&e+&8&l] &aGiới thiệu &f»'
+      - '&f &f &f &fDung luyện nên từ những viên ngọc'
+      - '&f &f &f &flưu ly mang theo khả năng phù phép'
+      - '&f &f &f &fnhững vật phẩm tầm thường thành'
+      - '&f &f &f &fmột thứ có sức mạnh vô song, tạo'
+      - '&f &f &f &9Lưu Ly &eNâng Cấp&f, những viên'
+      - '&f &f &f &fngọc có giá trị ma thuật cao'
+      - '&f'
+      - '&8&l[&e+&8&l] &eChuyển đổi &f»'
+      - '&f &f &f &aGhi chú: &fĐể tránh tình trạng'
+      - '&f &f &f &clag/lỗi &fgây ra bởi hệ thống,'
+      - '&f &f &f &fvui lòng hạn chế spam lệnh.'
+      - '&f'
+      - '&f &f &f &fGiá đổi: &a64 &9Khối Lưu Ly &f⇨ &a1 &9Lưu Ly &eNâng Cấp'
+      - '&f &f &f &fTúi của bạn: &a%javascript_count-amount_lapis% &9Khối Lưu Ly'
+      - '&f'
+      - '&f &f &f &e» &fChế độ đổi'
+      - '&f &f &f &8&l[&b+&8&l] &eĐổi một lần &f»'
+      - '&f &f &f &f &f &f &f &fCó thể đổi: &a%javascript_count-stack_lapis% &flần đổi'
+      - '&f &f &f &f &f &f &f &cLưu ý: &fNên dùng chế độ này nếu trong túi đồ'
+      - '&f &f &f &f &f &f &f &fbạn có ít hơn &a256 &9Khối Lưu Ly&f, nhằm hạn'
+      - '&f &f &f &f &f &f &f &fchế gây lag cho hệ thống'
+      - '&f'
+      - '&f &f &f &8&l[&b+&8&l] &eĐổi tất cả &f»'
+      - '&f &f &f &f &f &f &f &fSau khi đổi: &a%javascript_count-amount_lapis% &f⇨ &a%javascript_count-remain_lapis% &9Khối Lưu Ly'
+      - '&f &f &f &f &f &f &f &fNhận được: &a%javascript_count-stack_lapis% &9Lưu Ly &eNâng Cấp'
+      - '&f'
+      - '&eChuột Trái &f- Đổi một lần'
+      - '&eChuột Phải &f- Đổi tất cả'
+    priority: 2
+    slot: 14
+    left_click_requirement:
+      requirements:
+        has-block:
+          type: has item
+          material: "LAPIS_BLOCK"
+          amount: 64
+      deny_commands:
+        - '[message] &eUpgrade &8&l| &fBạn không có đủ &a64 &9Khối Lưu Ly &fđể trao đổi với hệ thống!'
+        - '[refresh]'
+    left_click_commands:
+      - '[console] clear %player_name% LAPIS_BLOCK 64'
+      - '[console] mi load custom lapis1 %player_name% 1'
+      - '[message] &eUpgrade &8&l| &fĐã đổi thành công &a1 &9Lưu Ly &eNâng Cấp&f, trong túi đồ của bạn còn &a%math_{javascript_count-amount_lapis}-64[precision:0]% &9Khối Lưu Ly'
+    right_click_requirement:
+      requirements:
+        is-necessary:
+          type: javascript
+          expression: '%javascript_count-amount_lapis% >= 256'
+      deny_commands:
+       - '[message] &eUpgrade &8&l| &fSố khối trong túi của bạn khá ít, hãy sử dụng chế độ đổi lần lượt để hạn chế làm lag máy chủ :)'
+    right_click_commands:
+      - '[console] mi load custom lapis1 %player_name% %javascript_count-stack_lapis%'
+      - '[console] clear %player_name% LAPIS_BLOCK %math_{javascript_count-stack_lapis}*64[precision:0]%'
+      - '[message] &eUpgrade &8&l| &fNâng cấp khoáng sản hoàn tất! Đã chuyển đổi &a%math_{javascript_count-stack_lapis}*64[precision:0]% &9Khối Lưu Ly &fthành &a%javascript_count-stack_lapis%
+        &9Lưu Ly &eNâng Cấp&f, trong túi đồ của bạn hiện còn &a%javascript_count-remain_lapis% &9Khối Lưu Ly'
+      - '[refresh] <delay=10>'
+  'redstone2':
+    material: basehead-eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjEyMzVjZjc1ZGY2YjViOWY0Zjc0Y2FkZGE1ZWMyMTVmNDgyYWFhMzI5YzI2MTJiNGEyYThlYTNlMDFiZWVkIn19fQ==
+    display_name: '&eUpgrade &8&l| &4Đá Đỏ &eNâng Cấp'
+    dynamic_amount: '%javascript_count-stack_redstone%'
+    update: true
+    hide_attributes: true
+    lore:
+      - '&7'
+      - '&8&l[&e+&8&l] &aGiới thiệu &f»'
+      - '&f &f &f &4Đá Đỏ&f, một nguyên liệu có khả năng'
+      - '&f &f &f &ftạo nên những cỗ máy đa tính năng,'
+      - '&f &f &f &ftiện lợi hóa cuộc sống của người chơi'
+      - '&f &f &f &fvà cũng là một nguồn năng lượng điện'
+      - '&f &f &f &fkhổng lồ. &4Đá Đỏ &eNâng Cấp&f, bản'
+      - '&f &f &f &fnâng cấp của đá đỏ là một phần không thể'
+      - '&f &f &f &fthiếu cho sức mạnh của những vũ khí'
+      - '&f &f &f &fhoặc dụng cụ có tính linh hoạt cao'
+      - '&f'
+      - '&8&l[&e+&8&l] &eChuyển đổi &f»'
+      - '&f &f &f &aGhi chú: &fNhằm hạn chế tình trạng xảy'
+      - '&f &f &f &fra lag lỗi, vui lòng tránh spam/sử dụng'
+      - '&f &f &f &flệnh quá nhanh, để hệ thống có thể thực'
+      - '&f &f &f &fhiện tính toán một cách chính xác!'
+      - '&f'
+      - '&f &f &f &fGiá đổi: &a64 &4Khối Đá Đỏ &f⇨ &a1 &4Đá Đỏ &eNâng Cấp'
+      - '&f &f &f &fTúi hiện có: &a%javascript_count-amount_redstone% &4Khối Đá Đỏ'
+      - '&f'
+      - '&f &f &f &e» &fChế độ đổi'
+      - '&f &f &f &8&l[&b+&8&l] &eĐổi một lần &f»'
+      - '&f &f &f &f &f &f &f &fCó thể đổi: &a%javascript_count-stack_redstone% &flần đổi'
+      - '&f &f &f &f &F &f &f &cLưu ý: &fNên sử dụng chế độ này nếu'
+      - '&f &f &f &f &f &f &f &ftrong túi bạn có ít hơn &a256'
+      - '&f &f &f &f &f &f &f &4Khối Đá Đỏ&f, nhằm hạn chế lag'
+      - '&f'
+      - '&f &f &f &8&l[&b+&8&l] &eĐổi tất cả &f»'
+      - '&f &f &f &f &f &f &f &fSau khi đổi: &a%javascript_count-amount_redstone% &f⇨ &a%javascript_count-remain_redstone% &4Khối Đá Đỏ'
+      - '&f &f &f &f &f &f &f &fNhận được: &a%javascript_count-stack_redstone% &4Đá Đỏ &eNâng Cấp'
+      - '&f'
+      - '&eChuột Trái &f- Đổi một lần'
+      - '&eChuột Phải &f- Đổi tất cả'
+    left_click_requirement:
+      requirements:
+        has-block:
+          type: has item
+          material: 'REDSTONE_BLOCK'
+          amount: 64
+      deny_commands:
+        - '[message] &eUpgrade &8&l| &fBạn không có đủ &a64 &4Khối Đá Đỏ &fđể thực hiện trao đổi với hệ thống'
+        - '[refresh]'
+    left_click_commands:
+      - '[console] clear %player_name% REDSTONE_BLOCK 64'
+      - '[console] mi load custom redstone1 %player_name% 1'
+      - '[message] &eUpgrade &8&l| &fĐã đổi thành công &a1 &4Đá Đỏ &eNâng Cấp&f, trong túi bạn còn &a%math_{javascript_count-amount_redstone}-64[precision:0]%'
+    right_click_requirement:
+      requirements:
+        is-necessary:
+          type: javascript
+          expression: '%javascript_count-amount_redstone% >= 256'
+      deny_commands:
+        - '[message] &eUpgrade &8&l| &fSố khối trong túi bạn còn ít, hãy sử dụng chế độ đổi lần lượt để hạn chế lag :3'
+    right_click_commands:
+      - '[console] mi load custom redstone1 %player_name% %javascript_count-stack_redstone%'
+      - '[console] clear %player_name% REDSTONE_BLOCK %math_{javascript_count-stack_redstone}*64[precision:0]%'
+      - '[message] &eUpgrade &8&l| &fNâng cấp khoáng sản hoàn tất! &fĐã chuyển đổi &a%math_{javascript_count-stack_redstone}*64[precision:0]% &4Khối Đá Đỏ &fthành &a%javascript_count-stack_redstone%
+        &4Đá Đỏ &eNâng Cấp&f, trong túi đồ của bạn hiện tại còn &a%javascript_count-remain_redstone% &4Khối Đá Đỏ'
+      - '[refresh] <delay=10>'
+    priority: 2
+    slot: 20
+  'iron2':
+    material: basehead-eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDBmOGRmYTVlZmM3NTYzMGNlMGRmNDBhNDliOGY1OWJjMjIyMTRkZTk3ZTNmYjQ0YjNjNTZlOGE5YzhhNTZiNiJ9fX0=
+    display_name: '&eUpgrade &8&l| &fSắt &eNâng Cấp'
+    dynamic_amount: '%javascript_count-stack_iron%'
+    update: true
+    hide_attributes: true
+    lore:
+      - '&7'
+      - '&8&l[&e+&8&l] &aGiới thiệu &f»'
+      - '&f &f &f &fSắt, một trong những kim loại quen'
+      - '&f &f &f &fthuộc nhất đối với đời sống của chúng'
+      - '&f &f &f &fta, cũng như là kim loại quan trọng'
+      - '&f &f &f &fnhất trong trò chơi. &fSắt &eNâng Cấp'
+      - '&f &f &f &fđược luyện nên từ trong những lò nén'
+      - '&f &f &f &ftinh thể ở nhiệt độ cao khủng khiếp,'
+      - '&f &f &f &fhình thành nên những thỏi sắt có độ'
+      - '&f &f &f &fbền tương đối cao, khó vỡ nát.'
+      - '&f'
+      - '&8&l[&e+&8&l] &eChuyển đổi &f»'
+      - '&f &f &f &aGhi chú: &fĐể hạn chế gây lag cho hệ thống,'
+      - '&f &f &f &fvui lòng đừng spam lệnh để máy chủ thực'
+      - '&f &f &f &fhiện tính toán một cách chính xác'
+      - '&f'
+      - '&f &f &f &fGiá đổi: &a64 &fKhối Sắt &f⇨ &a1 &fSắt &eNâng Cấp'
+      - '&f &f &f &fTúi hiện có: &a%javascript_count-amount_iron% &fKhối Sắt'
+      - '&f'
+      - '&f &f &f &e» &fChế độ đổi'
+      - '&f &f &f &8&l[&b+&8&l] &eĐổi một lần &f»'
+      - '&f &f &f &f &f &f &f &fCó thể đổi: &a%javascript_count-stack_iron% &flần đổi'
+      - '&f &f &f &f &f &f &f &cLưu ý: &fNên sử dụng chế độ này nếu'
+      - '&f &f &f &f &f &f &f &ftrong túi đồ bạn có ít hơn &a256&f'
+      - '&f &f &f &f &f &f &f &fKhối Sắt, để tránh gây lag cho máy chủ.'
+      - '&f'
+      - '&f &f &f &8&l[&b+&8&l] &eĐổi tất cả &f»'
+      - '&f &f &f &f &f &f &f &fSau khi đổi: &a%javascript_count-amount_iron% &f⇨ &a%javascript_count-remain_iron% &fKhối Sắt'
+      - '&f &f &f &f &f &f &f &fNhận được: &a%javascript_count-stack_iron% &fSắt &eNâng Cấp'
+      - '&f'
+      - '&eChuột Trái &f- Đổi một lần'
+      - '&eChuột Phải &f- Đổi tất cả'
+    priority: 2
+    slot: 22
+    left_click_requirement:
+      requirements:
+        has-block:
+          type: has item
+          material: 'IRON_BLOCK'
+          amount: 64
+      deny_commands:
+        - '[message] &eUpgrade &8&l| &fBạn không có đủ &a64 &fKhối Sắt để thực hiện trao đổi với hệ thống!'
+        - '[refresh]'
+    left_click_commands:
+      - '[console] clear %player_name% IRON_BLOCK 64'
+      - '[console] mi load custom iron1 %player_name% 1'
+      - '[message] &eUpgrade &8&l| &fĐã đổi thành công &a1 &fSắt &eNâng Cấp&f, trong túi hiện còn &a%math_{javascript_count-amount_iron}-64[precision:0]% &fKhối Sắt'
+    right_click_requirement:
+      requirements:
+        is-necessary:
+          type: javascript
+          expression: '%javascript_count-amount_iron% >= 256'
+      deny_commands:
+        - '[message] &eUpgrade &8&l| &fSố khối trong túi của bạn còn ít, hãy sử dụng chế độ đổi lần lượt để hạn chế lag :3'
+    right_click_commands:
+      - '[console] mi load custom iron1 %player_name% %javascript_count-stack_iron%'
+      - '[console] clear %player_name% IRON_BLOCK %math_{javascript_count-stack_iron}*64[precision:0]%'
+      - '[message] &eUpgrade &8&l| &fNâng cấp khoáng sản hoàn tất! Đã đổi &a%math_{javascript_count-stack_iron}*64[precision:0]% &fKhối Sắt thành &a%javascript_count-stack_iron%
+        &fSắt &eNâng Cấp&f, trong túi của bạn hiện còn &a%javascript_count-remain_iron% &fKhối Sắt'
+      - '[refresh] <delay=10>'
+  'gold2':
+    material: basehead-eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTUxNTk5ZjY2ZTgzZGE1NTVjZjliOGI3ZTVhMzc5ZDBkZWFiMjFjMmVlZTkwOWQxODM3MzIzZGIwODkzYmYzOCJ9fX0=
+    display_name: '&eUpgrade &8&l| &6Vàng &eNâng Cấp'
+    dynamic_amount: '%javascript_count-stack_gold%'
+    update: true
+    hide_attributes: true
+    lore:
+      - '&7'
+      - '&8&l[&e+&8&l] &aGiới thiệu &f»'
+      - '&f &f &f &6Vàng&f, một trong những kim loại quý'
+      - '&f &f &f &fgiá của thế giới, là một khoáng sản'
+      - '&f &f &f &fđắt giá, và &6Vàng &eNâng Cấp &flà'
+      - '&f &f &f &flà sự dung luyện của những khối vàng'
+      - '&f &f &f &fcó giá trị cao, tạo nên tính chất'
+      - '&f &f &f &fkhúc xạ ánh sáng cũng như sát thương'
+      - '&f &f &f &flửa của nó, hoặc làm tăng tốc độ hoạt'
+      - '&f &f &f &fđộng của các dụng cụ thường ngày'
+      - '&f'
+      - '&8&l[&e+&8&l] &eChuyển đổi &f»'
+      - '&f &f &f &aGhi chú: &fNhằm tránh gây lag hệ thống tính,'
+      - '&f &f &f &fvui lòng hạn chế spam lệnh để việc cập nhật'
+      - '&f &f &f &fthông tin diễn ra nhanh chóng và chính xác'
+      - '&f'
+      - '&f &f &f &fGiá đổi: &a64 &6Khối Vàng &f⇨ &a1 &6Vàng &eNâng Cấp'
+      - '&f &f &f &fTúi hiện có: &a%javascript_count-amount_gold% &6Khối Vàng'
+      - '&f'
+      - '&f &f &f &e» &fChế độ đổi'
+      - '&f &f &f &8&l[&b+&8&l] &eĐổi một lần &f»'
+      - '&f &f &f &f &f &f &f &fCó thể đổi: %javascript_count-stack_gold% &flần đổi'
+      - '&f &f &f &f &f &f &f &cLưu ý: &fNếu số lượng khối trong túi ít hơn'
+      - '&f &f &f &f &f &f &f &a256 &6Khối Vàng&f, bạn nên dùng chế độ này'
+      - '&f &f &f &f &f &f &f &fđể hạn chế gây lag cho máy chủ'
+      - '&f'
+      - '&f &f &f &8&l[&b+&8&l] &eĐổi tất cả &f»'
+      - '&f &f &f &f &f &f &f &fSau khi đổi: &a%javascript_count-amount_gold% &f⇨ &a%javascript_count-remain_gold% &6Khối Vàng'
+      - '&f &f &f &f &f &f &f &fNhận được: &a%javascript_count-stack_gold% &6Vàng &eNâng Cấp'
+      - '&f'
+      - '&eChuột Trái &f- Đổi một lần'
+      - '&eChuột Phải &f- Đổi tất cả'
+    priority: 2
+    slot: 24
+    left_click_requirement:
+      requirements:
+        has-block:
+          type: has item
+          material: 'GOLD_BLOCK'
+          amount: 64
+      deny_commands:
+        - '[message] &eUpgrade &8&l| &fBạn không có đủ &a64 &6Khối Vàng &fđể trao đổi với hệ thống!'
+        - '[refresh]'
+    left_click_commands:
+      - '[console] clear %player_name% GOLD_BLOCK 64'
+      - '[console] mi load custom1 gold1 %player_name% 1'
+      - '[message] &eUpgrade &8&l| &fĐã đổi thành công &a1 &6Vàng &eNâng Cấp&f, trong túi bạn còn &a%math_{javascript_count-amount_gold}-64[precision:0]% &6Khối Vàng'
+    right_click_requirement:
+      requirements:
+        is-necessary:
+          type: javascript
+          expression: '%javascript_count-amount_gold% >= 256'
+      deny_commands:
+        - '[message] &eUpgrade &8&l| &fSố khối trong túi bạn còn ít, hãy sử dụng chế độ đổi lần lượt để hạn chế lag :3'
+    right_click_commands:
+      - '[console] mi load custom gold1 %player_name% %javascript_count-stack_gold%'
+      - '[console] clear %player_name% GOLD_BLOCK %math_{javascript_count-stack_gold}*64[precision:0]%'
+      - '[message] &eUpgrade &8&l| &fNâng cấp khoáng sản hoàn tất! Đã chuyển đổi &a%math_{javascript_count-stack_gold}*64[precision:0]% &6Khối Vàng &fthành &a%javascript_count-stack_gold%
+        &6Vàng &eNâng Cấp&f, trong túi bạn hiện còn &a%javascript_count-remain_gold% &6Khối Vàng'
+      - '[refresh] <delay=10>'
+  'diamond2':
+    material: basehead-eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWUwNTc5OTZjYmE0NzMyOGRmNzJmYmEzZWEyYjlhYTM1YzhhODIyN2YxY2VjODljMTg4NGRjYWRhYTgyNGQ4NSJ9fX0=
+    display_name: '&eUpgrade &8&l| &bKim Cương &eNâng Cấp'
+    dynamic_amount: '%javascript_count-stack_diamond%'
+    update: true
+    hide_attributes: true
+    lore:
+      - '&7'
+      - '&8&l[&e+&8&l] &aGiới thiệu »'
+      - '&f &f &f &fMột trong hai nguyên liệu quý hiếm nhất'
+      - '&f &f &f &ftrong công cuộc khai thác khoáng sản'
+      - '&f &f &f &ftrên đảo bay chính là &bKim Cương&f, và'
+      - '&f &f &f &bKim Cương &eNâng Cấp&f, sự kết tinh của'
+      - '&f &f &f &fnhững tinh thể &bKim Cương&f, tạo nên'
+      - '&f &f &f &fkhả năng chịu bền cao và đồng thời là'
+      - '&f &f &f &fmạch ma thuật chính của đa số vật phẩm'
+      - '&f &f &f &fcó độ hiếm cao trong máy chủ'
+      - '&f'
+      - '&8&l[&e+&8&l] &aChuyển đổi &f»'
+      - '&f &f &f &aGhi chú: &fHạn chế spam lệnh hoặc bấm quá'
+      - '&f &f &f &fnhanh, để tránh gây lag cho máy chủ'
+      - '&f'
+      - '&f &f &f &fGiá đổi: &a64 &bKhối Kim Cương &f⇨ &a64 &bKim Cương &eNâng Cấp'
+      - '&f &f &f &fTrong túi có: &a%javascript_count-amount_diamond% &bKhối Kim Cương'
+      - '&f'
+      - '&f &f &f &e» &fChế độ đổi'
+      - '&f &f &f &8&l[&b+&8&l] &eĐổi một lần &f»'
+      - '&f &f &f &f &f &f &f &fCó thể đổi: &a%javascript_count-stack_diamond% &flần đổi'
+      - '&f &f &f &f &f &f &f &cLưu ý: &fNếu trong túi bạn có ít hơn &a256 &f'
+      - '&f &f &f &f &f &f &f &bKhối Kim Cương&f, hãy sử dụng chế độ này để'
+      - '&f &f &f &f &f &f &f &fhạn chế gây lag cho hệ thống tính toán'
+      - '&f &f &f &8&l[&b+&8&l] &eĐổi tất cả &f»'
+      - '&f &f &f &f &f &f &f &fSau khi đổi: &a%javascript_count-amount_diamond% &f⇨ &a%javascript_count-remain_diamond% &bKhối Kim Cương'
+      - '&f &f &f &f &f &f &f &fNhận được: &a%javascript_count-stack_diamond% &bKim Cương &eNâng Cấp'
+      - '&f'
+      - '&eChuột Trái &f- Đổi một lần'
+      - '&eChuột Phải &f- Đổi tất cả'
+    priority: 2
+    slot: 30
+    left_click_requirement:
+      requirements:
+        has-block:
+          type: has item
+          material: 'DIAMOND_BLOCK'
+          amount: 64
+      deny_commands:
+        - '[message] &eUpgrade &8&l| &fBạn không có đủ &a64 &bKhối Kim Cương &fđể thực hiện trao đổi với hệ thống'
+        - '[refresh]'
+    left_click_commands:
+      - '[console] clear %player_name% DIAMOND_BLOCK 64'
+      - '[console] mi load custom diamond1 %player_name% 1'
+      - '[message] &eUpgrade &8&l| &fĐã đổi thành công &a1 &bKim Cương &eNâng Cấp&f, trong túi bạn còn &a%javascript_count-amount_diamond% &bKhối Kim Cương'
+    right_click_requirement:
+      requirements:
+        is-necessary:
+          type: javascript
+          expression: '%javascript_count-amount_diamond% >= 256'
+      deny_commands:
+        - '[message] &eUpgrade &8&l| &fSố khối trong túi bạn còn ít, hãy dùng chế độ đổi lần lượt để hạn chế lag :3'
+    right_click_commands:
+      - '[console] mi load custom diamond1 %player_name% %javascript_count-stack_diamond%'
+      - '[console] clear %player_name% DIAMOND_BLOCK %math_{javascript_count-stack_diamond}*64[precision:0]%'
+      - '[message] &eUpgrade &8&l| &fNâng cấp khoáng sản hoàn tất! Đã chuyển đổi &a%math_{javascript_count-stack_diamond}*64[precision:0]% &bKhối Kim Cương &fthành &a%javascript_count-stack_diamond%
+        &bKim Cương &eNâng Cấp&f, trong túi bạn hiện còn &a%javascript_count-remain_diamond% &bKhối Kim Cương'
+      - '[refresh] <delay=10>'
+  'emerald2':
+    material: basehead-eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOGU3MzJhZjdkZDljMTNmNmIxZWI4YjcxYmYzNzNiYmUwMmI4YWViM2ZjZjY5YjNlYjQwZDZkMjliNGZmODQyMCJ9fX0=
+    display_name: '&eUpgrade &8&l| &aLục Bảo &eNâng Cấp'
+    dynamic_amount: '%javascript_count-stack_emerald%'
+    update: true
+    hide_attributes: true
+    lore:
+      - '&7'
+      - '&8&l[&e+&8&l] &aGiới thiệu &f»'
+      - '&f &f &f &fSâu trong những ngọn núi cao vút của'
+      - '&f &f &f &fthế giới, là những viên &aNgọc Lục Bảo'
+      - '&f &f &f &fđược dùng cho việc trao đổi với dân'
+      - '&f &f &f &flàng, thế nhưng độ hiếm của chúng cũng'
+      - '&f &f &f &fkhông thua kém gì những viên kim cương.'
+      - '&f &f &f &fVới những viên &aLục Bảo &fnâng cấp,'
+      - '&f &f &f &fthể sở hữu những vật phẩm có tính phù'
+      - '&f &f &f &fphép mạnh và những khả năng siêu nhiên'
+      - '&f'
+      - '&8&l[&e+&8&l] &eChuyển đổi &f»'
+      - '&f &f &f &aGhi chú: &fHạn chế spam lệnh hoặc bấm quá'
+      - '&f &f &f &fnhanh, để tránh gây lag cho máy chủ'
+      - '&f'
+      - '&f &f &f &fGiá đổi: &a64 Khối Lục Bảo &f⇨ &a1 Lục Bảo &eNâng Cấp'
+      - '&f &f &f &fTrong túi có: &a%javascript_count-amount_emerald% Khối Lục Bảo'
+      - '&f'
+      - '&f &f &f &e» &fChế độ đổi'
+      - '&f &f &f &8&l[&b+&8&l] &eĐổi một lần &f»'
+      - '&f &f &f &f &f &f &f &fCó thể đổi: &a%javascript_count-stack_emerald% &flần đổi'
+      - '&f &f &f &f &f &f &f &cLưu ý: &fNếu trong túi đồ của bạn có ít hơn'
+      - '&f &f &f &f &f &f &f &a256 Khối Lục Bảo&f thì nên sử dụng chế độ'
+      - '&f &f &f &f &f &f &f &fnày để việc trao đổi diễn ra nhanh hơn!'
+      - '&f &f &f &8&l[&b+&8&l] &eĐổi tất cả &f»'
+      - '&f &f &f &f &f &f &f &fSau khi đổi: &a%javascript_count-amount_emerald% &f⇨ &a%javascript_count-remain_emerald% Khối Lục Bảo'
+      - '&f &f &f &f &f &f &f &fNhận được: &a%javascript_count-stack_emerald% Lục Bảo &eNâng Cấp'
+      - '&f'
+      - '&eChuột Trái &f- Đổi một lần'
+      - '&eChuột Phải &f- Đổi tất cả'
+    priority: 2
+    slot: 32
+    left_click_requirement:
+      requirements:
+        has-block:
+          type: has item
+          material: 'EMERALD_BLOCK'
+          amount: 64
+      deny_commands:
+        - '[message] &eUpgrade &8&l| &fBạn không có đủ &a64 Khối Lục Bảo&f để thực hiện trao đổi với hệ thống!'
+        - '[refresh]'
+    left_click_commands:
+      - '[console] mi load custom emerald1 %player_name% 1'
+      - '[console] clear %player_name% EMERALD_BLOCK 64'
+      - '[message] &eUpgrade &8&l| &fĐổi thành công &a1 Lục Bảo &eNâng Cấp&f, trong túi bạn còn &a%javascript_count-amount_emerald% Khối Lục Bảo'
+    right_click_requirement:
+      requirements:
+        is-necessary:
+          type: javascript
+          expression: '%javascript_count-amount_emerald% >= 256'
+      deny_commands:
+        - '[message] &eUpgrade &8&l| &fSố khối trong túi đồ bạn khá ít, hãy dùng chế độ đổi lần lượt để hạn chế lag :3'
+    right_click_commands:
+      - '[console] mi load custom emerald1 %player_name% %javascript_count-stack_emerald%'
+      - '[console] clear %player_name% EMERALD_BLOCK %math_{javascript_count-stack_emerald}*64[precision:0]%'
+      - '[message] &eUpgrade &8&l| &fNâng cấp khoáng sản thành công! Đã chuyển đổi &a%math_{javascript_count-stack_emerald}*64[precision:0]% Khối Lục Bảo &fthành &a%javascript_count-stack_emerald%
+        Lục Bảo &eNâng Cấp&f, trong túi bạn hiện còn &a%javascript_count-remain_emerald% Khối Lục Bảo'
+      - '[refresh] <delay=10>'
+
+# End of file - upgrades.yml
+# Build by emnoigi1452 - Đức Hải Cẽo
+# Finished as of 4:57P.M - 15/11/2020
+# API version : 2.10.9 - Menu version : 1.13.3
+# Upgrade v2.0 - Build #01
